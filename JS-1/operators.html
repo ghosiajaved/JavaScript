@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Operators</h2>
+
+<h3>1.Arithmetic Operators </h3>
+<h5>Perimeter of rectangle with length: 20 and width: 30</h5>
+<p id="arithmeticop"></p>
+
+<h3>2.Assignment Operators</h3>
+<h5>Addition Assignment Operator</h5>
+<p id="add-assignmentop"></p>
+<h5>Multiplication Assignment Operator</h5>
+<p id="mult-assignmentop"></p>
+
+<h3>3.Comparison Operator</h3>
+<h5>Equal-to Comparison Operator</h5>
+<p id="equal"></p>
+<h5>Less Than Comparison Operator</h5>
+<p id="lessthan"></p>
+
+<h3>4.Logical Operators</h3>
+<h5>Logical AND Operator</h5>
+<p id="andop"></p>
+<h5>Logical OR Operator</h5>
+<p id="orop"></p>
+
+<h3>5.Type Operator</h3>
+<p id="typeop"></p>
+
+<h3>6.Bitwise Operator</h3>
+<p id="bitwiseop1"></p>
+<p id="bitwiseop2"></p>
+
+<script>
+
+var length = 20;
+var width = 30;
+var perimeter = 2*(length + width);
+document.getElementById("arithmeticop").innerHTML = perimeter;
+
+var operand1 = 10;
+operand1+=100;
+var operand2 = 20;
+operand2*=60;
+document.getElementById("add-assignmentop").innerHTML = operand1;
+document.getElementById("mult-assignmentop").innerHTML = operand2;
+
+var x=5, y=5;
+if (x==y)
+{document.getElementById("equal").innerHTML = "x and y are equal"}
+else
+{document.getElementById("equal").innerHTML = "x and y are not equal"}
+
+var a=10,b=5;
+if(b<a)
+{document.getElementById("lessthan").innerHTML = "Five is less than ten"}
+
+var number1=5, number2=5;
+if (number1==5 && number2==5)
+{document.getElementById("andop").innerHTML = "Both numbers are equal"}
+else
+{document.getElementById("andop").innerHTML = "Both numbers are not equal"}
+
+var num1=5, num=10;
+if (num1==5 || num2==5)
+{document.getElementById("orop").innerHTML = "One of the two numbers has value 5"}
+else
+{document.getElementById("orop").innerHTML = "None of the variables have value 5"}
+
+document.getElementById("typeop").innerHTML = Number(Math.PI)+"<br>"+Number("Ali");
+
+document.getElementById("bitwiseop1").innerHTML = 6 & 2;
+document.getElementById("bitwiseop2").innerHTML = 5 | 1;
+
+</script>
+
+</body>
+</html> 

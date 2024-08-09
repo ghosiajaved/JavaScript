@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Control Structures</h2>
+
+<h3>Height Evaluation</h3>
+
+<h4>1.If-Else</h4>
+<p id="height"></p>
+
+<h4>2.Else-If</h4>
+<p id="height-elseif"></p>
+
+<h3>BMI</h3>
+<input type="text" id="bmival"><button onclick="bmiEval()">Evaluate</button>
+<p id="bmiresult"></p>
+
+<h4>3.Switch</h4>
+<h3>Remarks</h3>
+<h4>Enter your grade below</h4>
+<input type="text" id="grade"><button onclick="gradeEval()">Go</button>
+<p id="remarks"></p>
+
+<h4>4.For Loop</h4>
+<h3>TOPPERS</h3>
+<p id="toppers"></p>
+
+<h4>5.For-In Loop</h4>
+<h3>Employees</h3>
+<p id="employees"></p>
+
+<h4>6.While Loop</h4>
+<p id="while"></p>
+
+<h4>7.Do-While Loop</h4>
+<p id="dowhile"></p>
+
+
+<script>
+
+function heightEval(h){
+    if(h>=5.5){
+        document.getElementById("height").innerHTML = "Tall";
+    }
+    else{
+        document.getElementById("height").innerHTML = "Short";
+    }
+}
+
+let height = heightEval(5.7);
+
+function heightEvaluation(h){
+    if(h>=6){
+        document.getElementById("height-elseif").innerHTML = "Tall";
+    }
+    else if(h>5 && h<6){
+        document.getElementById("height-elseif").innerHTML = "Average";
+    }
+    else{
+        document.getElementById("height-elseif").innerHTML = "Short";
+    }
+}
+
+let Height = heightEvaluation(5.7);
+
+function bmiEval(){
+    
+    const bmi = document.getElementById("bmival").value;
+
+    if(bmi<18.5){
+        document.getElementById("bmiresult").innerHTML = "Underweight";
+    }
+    else if(bmi>=18.5 && bmi<=24.9){
+        document.getElementById("bmiresult").innerHTML = "Normal weight";
+    }
+    else if(bmi>=25 && bmi<=29.9){
+        document.getElementById("bmiresult").innerHTML = "Overweight";
+    }
+    else{
+        document.getElementById("bmiresult").innerHTML = "Obese";
+    }
+}
+
+function gradeEval(){
+
+    const  grade = document.getElementById("grade").value;
+
+    switch(grade.toUpperCase()){
+
+        case 'A':
+        document.getElementById("remarks").innerHTML = "Excellent job. Keep it up ! ";
+        break;
+        case 'B':
+        document.getElementById("remarks").innerHTML = "Doing great";
+        break;
+        case 'C':
+        document.getElementById("remarks").innerHTML = "Good job, keep working hard";
+        break;
+        case 'D':
+        document.getElementById("remarks").innerHTML = "You're doing well, don't give up";
+        break;
+        case 'F':
+        document.getElementById("remarks").innerHTML = "Unsatisfactory! Seek additional help";
+        break;
+        default:
+        document.getElementById("remarks").innerHTML = "Invalid input";
+    }
+}
+
+const names= ["Ali", "Ayesha", "Ahmad", "Saad","Alina"];
+let toppers="";
+for (let i = 0; i < names.length; i++) {
+  toppers += names[i] + "<br>";
+}
+document.getElementById("toppers").innerHTML = toppers;
+
+const employees = ["Abdullah ","Hassan ","Saniya ","Shaheer ","Noman ","Noor "];
+let display="";
+for (let e in employees){
+    display+=employees[e];
+} 
+document.getElementById("employees").innerHTML = employees;
+
+var number=3;
+let str="";
+while(number<=10){
+    str+=number+"<br>";
+    number++;
+}
+document.getElementById("while").innerHTML = str;
+
+
+var num=3;
+let stringg="";
+do{
+    stringg+=num+"<br>";
+    num++;
+}while(num<=10)
+document.getElementById("dowhile").innerHTML = stringg;
+
+
+</script>
+
+</body>
+</html> 

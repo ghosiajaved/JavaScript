@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Data Types</h2>
+
+<h3>1.Strings</h3>
+<h5>Personal Information</h5>
+<p id="info"></p>
+
+<h3>2.Numbers</h3>
+<h5>Perimeter of square with one side equals to 8:</h5>
+<p id="perimeter"></p>
+
+<h3>3.Bool</h3>
+<h5>Is this a javascript tutorial ?</h5>
+<p id="tutorial"></p>
+
+<h3>4.Undefined</h3>
+<h5>This is what undefined data type looks like</h5>
+<p id="undefined"></p>
+
+<h3>4.Null</h3>
+<h5>This is what null data type looks like</h5>
+<p id="nulltype"></p>
+
+
+<script>
+
+let name = "Ayla";
+let age = 25;
+let info = name +"<br>"+ age ;
+document.getElementById("info").innerHTML = info;
+
+var a = 8;
+var perimeter = 4*a;
+document.getElementById("perimeter").innerHTML = perimeter; 
+
+let js_tutorial = true;
+document.getElementById("tutorial").innerHTML = js_tutorial; 
+
+var apples = null;
+document.getElementById("nulltype").innerHTML = apples; 
+
+
+</script>
+
+</body>
+</html> 

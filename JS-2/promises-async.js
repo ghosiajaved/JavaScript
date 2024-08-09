@@ -3,12 +3,12 @@
 //Represents the eventual completion (or failure) of an asynchronous operation and its resulting value
 //Chaining .then() for success, .catch() for failure
 //1 
-function display(someval){
+function display(someval) {
     console.log(someval);
-} 
-let promise1= new Promise(function(resolve,reject) {
-    let x= Math.random();
-    if(x<10){
+}
+let promise1 = new Promise(function (resolve, reject) {
+    let x = Math.random();
+    if (x < 10) {
         resolve("Value less than 10");
     }
     else {
@@ -17,17 +17,17 @@ let promise1= new Promise(function(resolve,reject) {
 });
 
 promise1.then(
-    function (value){display(value);},
-    function (error){display(error);}
+    function (value) { display(value); },
+    function (error) { display(error); }
 )
 
 //2
-let otherprom= new Promise(function(resolve,reject){
-    let present= false;
-    if(present){
+let otherprom = new Promise(function (resolve, reject) {
+    let present = false;
+    if (present) {
         resolve("Student Present");
     }
-    else{
+    else {
         reject("Student Absent");
     }
 });
@@ -50,9 +50,9 @@ fetchData((message) => {
 
 
 //3. Promise with then and catch
-let promise2 = new Promise(function (resolve, reject){
+let promise2 = new Promise(function (resolve, reject) {
     let temp_high = true;
-    if(temp_high){
+    if (temp_high) {
         resolve("Temperature High!");
     } else {
         reject("Temperature cold or average.");
@@ -60,22 +60,22 @@ let promise2 = new Promise(function (resolve, reject){
 });
 
 promise2
-    .then(result => console.log(result))  
+    .then(result => console.log(result))
     .catch(error => console.log(error));
 
 
 //4. Chaining promises
-let promise3 = new Promise(function(resolve) {
+let promise3 = new Promise(function (resolve) {
     resolve(3);
 });
 
 promise3
     .then(answer => {
-        console.log(answer);  
+        console.log(answer);
         return answer * 2;      //multiplies 3 by 2
     })
     .then(answer => {
-        console.log(answer);  
+        console.log(answer);
         return answer * 3;      //multiplies 6 by 3
     })
     .then(answer => {
@@ -90,30 +90,30 @@ let prom3 = new Promise((resolve) => {
 });
 
 Promise.all([prom1, prom2, prom3]).then(values => {
-    console.log(values); 
+    console.log(values);
 });
 
 //Async/Await
 
 //1
-async function getdata(){
+async function getdata() {
     return ("Data recieved");           //async returns a promise
 }
 
-getdata().then(result =>{
+getdata().then(result => {
     console.log(result);           //does not wait for anything i.e is executed in parallel
 });
 
 //2
 async function asyncfunc2() {
 
-    let promise= new Promise(function(resolve){
-        setTimeout(()=>{
+    let promise = new Promise(function (resolve) {
+        setTimeout(() => {
             resolve("Todays weather is hot");   //logs string exactly after two seconds
-        },2000)
+        }, 2000)
     });
 
-    let result= await promise;
+    let result = await promise;
     console.log(result);
 
 }
@@ -124,22 +124,22 @@ asyncfunc2();
 //Multiple async/await
 async function asyncfunc3() {
 
-    let promise= new Promise(function(resolve){
-        setTimeout(()=>{
-            resolve("Hello from first promise");   
-        },6000)
+    let promise = new Promise(function (resolve) {
+        setTimeout(() => {
+            resolve("Hello from first promise");
+        }, 6000)
     });
 
-    let promise2= new Promise(function(resolve){
-        setTimeout(()=>{
-            resolve("Hello from second promise");   
-        },7000)
+    let promise2 = new Promise(function (resolve) {
+        setTimeout(() => {
+            resolve("Hello from second promise");
+        }, 7000)
     });
 
-    let result= await promise;    //waits for execution of promise one then moves ahead
+    let result = await promise;    //waits for execution of promise one then moves ahead
     console.log(result);
 
-    let result2= await promise2;  //waits for execution of promise two
+    let result2 = await promise2;  //waits for execution of promise two
     console.log(result2);
 
 }
@@ -147,8 +147,20 @@ async function asyncfunc3() {
 asyncfunc3();
 
 //4
-const anonymous= async () =>{
+const anonymous = async () => {
     return "This async function will not wait for anyone";
 };
 
 anonymous().then(result => console.log(result));
+
+
+//5
+const delayedGreeting = async () => { //gives this message exactly after 2 seconds without waiting for anything else
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve("Hello from the future!");  
+        }, 2000);
+    });
+};
+
+delayedGreeting().then(message => console.log(message));

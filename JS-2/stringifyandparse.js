@@ -37,6 +37,20 @@ const arr= '["ali","mehtab","salman","hamza","saleha"]';
 const parsedarr= JSON.parse(arr);
 console.log(parsedarr);
 
+//Array + object
+const items = [
+    { id: 1, name: "Product A" },
+    { id: 2, name: "Product B" }
+  ];
+  
+  // Stringify the item array
+  const itemstr = JSON.stringify(items);
+  console.log(itemstr); 
+  
+  // Parse the string back to an array of objects
+  const parseditems = JSON.parse(items);
+  console.log(parseditems); 
+
 //SHALLOW COPY
 const person = {
     name: "Ahmad",
@@ -70,8 +84,4 @@ deepcopy.address.area = "College Road";
 
 console.log(organization); 
 console.log(deepcopy); 
-
-
-//GIT AND GITHUB
-//use "dir /a" instead of "ls -a"
 

@@ -83,6 +83,22 @@ let age= 27;
 let g = `HAPPY BIRTHDAY ${Name} ! You turned ${age} this year`;
 console.log(g);
 
+//Tagged Templates
+const person5 = "Nadeem";
+const age5 = 25;
+
+function tag(string, personexp, ageexp) {
+  const str0 = string[0]; 
+  const str1 = string[1]; 
+  const str2 = string[2]; 
+
+  const agestring = ageexp < 100 ? "youngster" : "centenarian";
+
+  return `${str0}${personexp}${str1}${agestring}${str2}`;
+}
+
+const output = tag`${person5} is a ${age5}.`;
+console.log(output);
 
 
 

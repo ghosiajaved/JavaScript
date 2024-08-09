@@ -139,3 +139,16 @@ const employee1={
 
 employee1.info();
 
+//CallBack Function
+//Passed as an argument to another function
+
+const mixednums= [8,3,10,2,4];
+
+function square(mixednums) {
+    return ("Squared Numbers:" + mixednums * mixednums);
+  }
+  
+  mixednums.forEach(function(mixednums) {
+    console.log(square(mixednums));
+  });
+
